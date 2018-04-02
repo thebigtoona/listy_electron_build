@@ -1,0 +1,24 @@
+{
+  "name": "Listy",
+  "version": "2.0.0",
+  "description": "a list application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/thebigtoona/listy",
+  "keywords": [
+    "list",
+    "web app"
+  ],
+  "author": "Tina Colvin",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.8.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}

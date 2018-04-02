@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Listy</title>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+  </head>
+  <body>
+
+
+    <div class="top-input">
+      <input class="form-control form-control-lg" type="text" placeholder="add items to your list...">
+      <button id="add-btn" class="btn btn-purple">Add</button>
+    </div>
+      <div class="text-center">
+          <ul class="list-group">
+            <!-- list items here -->
+          </ul>
+       
+
+        <h1>Listy</h1>
+      </div>
+      
+      <div class="overlay"></div>
+
+    <script>
+      // You can also require other files to run in this process
+      const $ = require('jquery');
+      require('bootstrap');
+      require('../src/app.js');
+    </script>
+  </body>
+</html>
