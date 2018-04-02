@@ -1,14 +1,12 @@
 # Listy
 
-a basic list application adapted to electron
+a basic list application adapted to an electron application from original listy project https://github.com/thebigtoona/listy.git
 
 ## Updates
 
 integrated this application into an electron app.
 
-### New Modules
-
-- Node js 
+- Node.js 
 - Electron
 
 ## Installation
