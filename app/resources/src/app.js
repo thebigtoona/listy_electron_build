@@ -2,10 +2,9 @@
 // desc: rederer process for listy 
 // ver: 2.0.2
 // date: 4/3/18
-
 const $ = require('jquery'); // require jquery before listy!
 const Listy = require('./Listy.js');  // require listy module 
-// const mainMenu = require('./mainMenu.js');  // require the menu template 
+// const ipcRenderer = require('electron').ipcRenderer; // require electron modules here
 
 /**
  * fn to simulate a click and add the items to the list. no parameters.
