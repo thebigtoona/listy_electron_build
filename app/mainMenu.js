@@ -1,17 +1,15 @@
-const { app, Menu, ipcMain } = require('electron')
+const { app, Menu, ipcMain } = require('electron');
+require('./main.js');
 
 const template = [
     {
         label: 'Listy',
         submenu: [
             { label: 'Add Item' },
+            { type: 'separator' },
             { 
                 label: 'Remove all Items',
-                click() 
-                { 
-                    'use strict';
-                    ipcMain.send( 'remove', 'arg' ); 
-                }
+                click() { removeItems(); }
             }
         ]
     },

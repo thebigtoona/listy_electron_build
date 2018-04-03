@@ -4,7 +4,7 @@
 // date: 4/3/18
 const $ = require('jquery'); // require jquery before listy!
 const Listy = require('./Listy.js');  // require listy module 
-// const ipcRenderer = require('electron').ipcRenderer; // require electron modules here
+const ipcRenderer = require('electron').ipcRenderer; // require electron modules here
 
 /**
  * fn to simulate a click and add the items to the list. no parameters.
@@ -53,4 +53,6 @@ $(document).ready(function () {
             addClick();
         }
     });
+
+    ipcRenderer.on('remote', () => { console.log('clicked'); });
 });
