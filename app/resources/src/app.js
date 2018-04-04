@@ -28,7 +28,7 @@ $(document).ready(function () {
     }
 
     // register the svc worker first 
-    Listy._registerSvcWorker();
+    // Listy._registerSvcWorker();
 
     // add item to list 
     $('#add-btn').click(function (e) {
