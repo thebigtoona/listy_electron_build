@@ -4,8 +4,6 @@
 // date: 4/2/2018
 // desc: controller for app.js 
 
-require('./jquery.js');
-
 /** an obj to hold the list information for Listy and display it in the html 
  * @param {array} list this is an empty array to add item objects to 
  * @method _displayItem(item) this method takes in the item obj and displays it in the ul. only used by other methods
@@ -16,8 +14,9 @@ module.exports = Listy = {
     staticCacheName: 'listy-v16',
     list: [],
     _registerSvcWorker: function () {
+        'use strict';
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js')
+            navigator.serviceWorker.register(`./sw.js`)
                 .then(function (registration) {
                     console.log('Registration successful, scope is:', registration.scope);
                 })
