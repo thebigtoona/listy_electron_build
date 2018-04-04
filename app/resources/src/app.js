@@ -48,7 +48,7 @@ $(document).ready(function () {
 
     // add item by pressing 'Enter'
     $(document).keypress(function (e) {
-        if (e.which == 13) {
+        if (e.which === 13) {
             e.preventDefault();
             addClick();
         }

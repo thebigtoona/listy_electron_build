@@ -1,15 +1,12 @@
-const { app, Menu, ipcMain } = require('electron');
-require('./main.js');
-
-const template = [
+exports.template = [
+    
     {
         label: 'Listy',
         submenu: [
             { label: 'Add Item' },
             { type: 'separator' },
             { 
-                label: 'Remove all Items',
-                click() { removeItems(); }
+                label: 'Remove all Items'
             }
         ]
     },
@@ -53,7 +50,7 @@ const template = [
         submenu: [
             {
                 label: 'Learn More',
-                click() { require('electron').shell.openExternal('https://github/thebigtoona/listy_electron_build') }
+                click() { 'use strict'; require('electron').shell.openExternal('https://github/thebigtoona/listy_electron_build'); }
             }
         ]
     }
@@ -96,6 +93,3 @@ if (process.platform === 'darwin') {
         { role: 'front' }
     ]
 }
-
-const menu = Menu.buildFromTemplate(template)
-Menu.setApplicationMenu(menu)

@@ -1,25 +1,33 @@
-require('./mainMenu.js')
 const electron = require('electron')
 // Module to control application life.
-const { app, BrowserWindow, ipcMain } = electron;
+const { app, BrowserWindow, Menu } = electron;
 
+// path and url 
 const path = require('path')
 const url = require('url')
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
+// electron-reload 
+require('electron-reload')(__dirname)
+
+// main menu module 
+const mainMenu = require('./mainMenu.js');
+
 let mainWindow
 
-function createWindow () {
+function createWindow () 
+{
+  'use strict';
+  
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 400, height: 600})
+  mainWindow = new BrowserWindow({width: 400, height: 600});
 
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
+  mainWindow.loadURL(url.format(
+  {
     pathname: path.join(__dirname, './resources/views/index.html'),
     protocol: 'file:',
     slashes: true
-  }))
+  }));
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -33,35 +41,18 @@ function createWindow () {
   })
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
+
+// ready event 
 app.on('ready', createWindow)
 
 // Quit when all windows are closed.
-app.on('window-all-closed', function () {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
+app.on('window-all-closed', () => { 'use strict'; if (process.platform !== 'darwin') { app.quit(); }});
 
-app.on('activate', function () {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
-    createWindow()
-  }
-})
+// activate event 
+app.on('activate', () => { 'use strict'; if (mainWindow === null) { createWindow(); }});
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-
-function removeItems() {
-  let args = 'clicked';
-  ipcMain.send('remove', args);
-}
-
+// main menu setup
+const menu = Menu.buildFromTemplate(mainMenu.template)
+Menu.setApplicationMenu(menu);
 
 
