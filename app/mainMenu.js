@@ -1,11 +1,17 @@
+// const $ = require(`${__dirname}\\resources\\src\\jquery.js`);
+const Listy = require(`${__dirname}\\resources\\src\\Listy.js`);
 exports.template = [
-    
+
     {
         label: 'Listy',
         submenu: [
-            { label: 'Add Item' },
+            {
+              label: 'Add Item',
+              accelerator: 'Enter',
+              // click: () => { Listy.addClick(); }
+            },
             { type: 'separator' },
-            { 
+            {
                 label: 'Remove all Items'
             }
         ]
