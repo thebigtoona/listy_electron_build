@@ -1,5 +1,5 @@
 // Listy.js
-// ver 2.0
+// ver: 2.0.1
 // author: Tina Colvin
 // date: 4/2/2018
 // desc: controller for app.js
@@ -9,9 +9,10 @@
  * @method _displayItem(item) this method takes in the item obj and displays it in the ul. only used by other methods
  * @method addItem(ListItem) this is the main method that takes in the list item, adds it to the html template
  * then pushes the template to the 'list' array and displays the item.
+ * @method addClick(item) this method simulates a click and pulls input from the user as the parameter 'item'
  */
 module.exports = Listy = {
-    staticCacheName: 'listy-v16',
+    staticCacheName: '', // cache (still used in non-electron build)
     list: [],
     _registerSvcWorker: function () {
         'use strict';
@@ -29,8 +30,9 @@ module.exports = Listy = {
         $('ul').append(item.html);
     },
     addItem: function (listitem) {
-        // template
+        // format the list item class. it is the list item using '-' to replace ' '
         let listClass = listitem.trim().split(' ').join('-');
+        // html template for list item
         let html = `<li class="list-group-item alert">
                         <p class="item-name ${listClass}" >${listitem}</p>
                         <button style="font-family: sans-serif;" type="button" class="close" aria-label="Close">
@@ -42,9 +44,6 @@ module.exports = Listy = {
         this.list.push(item);  // add to list array
         this._displayItem(item);  // display the item
     },
-    /**
-     * fn to simulate a click and add the items to the list. no parameters.
-     */
     addClick: function (item) {
         var listItem = $('input:text').val();
 
@@ -54,4 +53,3 @@ module.exports = Listy = {
         return
     }
 };
-// export { Listy };

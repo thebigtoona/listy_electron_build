@@ -1,5 +1,4 @@
-// const $ = require(`${__dirname}\\resources\\src\\jquery.js`);
-const Listy = require(`${__dirname}\\resources\\src\\Listy.js`);
+
 exports.template = [
 
     {
@@ -8,7 +7,6 @@ exports.template = [
             {
               label: 'Add Item',
               accelerator: 'Enter',
-              // click: () => { Listy.addClick(); }
             },
             { type: 'separator' },
             {
