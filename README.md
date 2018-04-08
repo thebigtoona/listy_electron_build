@@ -2,12 +2,10 @@
 
 a basic list application adapted to an electron application from original listy project https://github.com/thebigtoona/listy.git
 
-## Updates
+## Requirements
 
-integrated this application into an electron app.
-
-- Node.js 
-- Electron
+- NPM
+- Node JS
 
 ## Installation
 
@@ -17,6 +15,4 @@ integrated this application into an electron app.
 
 ## Picture Credit
 
-Thanks to Aziz Acharki(unsplash) for the photo used
-
-
+Thanks to [Aziz Acharki](https://unsplash.com/@acharki95) for the photo used
