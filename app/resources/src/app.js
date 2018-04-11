@@ -5,8 +5,11 @@
 const $ = require('jquery'); // require jquery before listy!
 const Listy = require('./Listy.js');  // require listy module
 const ipcRenderer = require('electron').ipcRenderer; // require electron modules here
+// const mainMenu = require('./mainMenu.js'); // main menu
+
 
 $(document).ready(function () {
+    // mainMenu.createMenu();
     var i;
     var localStorage = window.localStorage;
 

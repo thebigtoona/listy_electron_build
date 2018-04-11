@@ -6,7 +6,7 @@
     --darker-purple: rgb(87, 28, 87);
 }
 
-* 
+*
 {
     margin: 0;
     padding: 0;
@@ -44,7 +44,7 @@ body, html
     background-color: rgba(255, 255, 255, .5);
 }
 
-h1, h2, h3 
+h1, h2, h3
 {
     font-family: var(--primary-font-stack);
     color: purple;
@@ -57,8 +57,8 @@ h1, h2, h3
 
 p
 {
-    font-size: 1.5em;
-    margin-top: 1em;
+    font-size: 1em;
+    margin: 0;
 }
 
 .btn-purple
@@ -66,7 +66,7 @@ p
     background: purple;
     color: whitesmoke;
 }
-.btn-purple:hover 
+.btn-purple:hover
 {
     background: var(--darker-purple);
     color: whitesmoke;
@@ -111,15 +111,18 @@ input
     border-bottom-right-radius: 0;
 }
 
-.form-row button 
+.form-row button
 {
     flex: 10%;
 }
 
 .list-group-item
 {
+    height: 3rem;
     display:flex;
-    z-index: 200;
+    z-index: 10;
+    padding: .5rem;
+    height: 2.5rem;
 }
 
 .list-group-item:hover
