@@ -152,10 +152,14 @@ input
     background-color: palegoldenrod;
 }
 
-.list-group-item p
+.list-group-item a
 {
     width: 95%;
-    /* --webkit-user-select:none;  /* so the user can't select print on the list item */ */
+}
+
+.list-group-item a > p
+{
+  --webkit-user-select:none;  /* so the user can't select print on the list item */
 }
 
 .list-group-item button

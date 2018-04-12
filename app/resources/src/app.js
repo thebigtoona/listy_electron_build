@@ -44,5 +44,14 @@ $(document).ready(function () {
         }
     });
 
+    // send a message to open modal window
+    $('.details').click(function()
+    {
+      // console log a click
+      console.log('click');
+      ipcRenderer.send('modal', 'data')
+    })
+
+    // ipcRenderer
     ipcRenderer.on('remote', () => { console.log('clicked'); });
 });

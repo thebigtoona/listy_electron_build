@@ -1,6 +1,7 @@
 // required modules
-const { app, Menu, webContents } = require('electron');
+const { app, Menu, webContents, ipcMain } = require('electron');
 const mainWindow = require('./mainWindow'); // main window module
+const modal = require('./modal'); // modal window
 require('electron-reload')(__dirname)  // electron-reload
 
 // ready event
@@ -11,3 +12,10 @@ app.on('window-all-closed', () => {  if (process.platform !== 'darwin') { app.qu
 
 // activate event
 app.on('activate', () => {  if (mainWindow === null) { mainWindow.createWindow(); } });
+
+// modal communication
+ipcMain.on('modal', function(data)
+{
+  modal.createModalWindow();
+  // console.log(data);
+})

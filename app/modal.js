@@ -11,7 +11,7 @@ exports.createModalWindow = () =>
     'use strict';
 
     // Create the browser window.
-    this.modal = new BrowserWindow({ width: 200, height: 300, parent: win });
+    this.modal = new BrowserWindow({ width: 300, height: 350, parent: exports.win, modal: true });
 
     // and load the index.html of the app.
     this.modal.loadURL(url.format(
@@ -22,7 +22,7 @@ exports.createModalWindow = () =>
         }));
 
     // Open the DevTools.
-    this.modal.webContents.openDevTools();
+    // this.modal.webContents.openDevTools();
 
     // Emitted when the window is closed.
     this.modal.on('closed', function () {

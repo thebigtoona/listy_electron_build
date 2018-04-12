@@ -1,17 +1,17 @@
-// required modules 
+// required modules
 const { BrowserWindow } = require('electron')
-// path and url 
+// path and url
 const path = require('path')
 const url = require('url')
 
 exports.win;
 
-exports.createWindow = () => 
+exports.createWindow = () =>
 {
     'use strict';
 
     // Create the browser window.
-    this.win = new BrowserWindow({ width: 400, height: 600 });
+    this.win = new BrowserWindow({ width: 450, height: 600 });
 
     // and load the index.html of the app.
     this.win.loadURL(url.format(
@@ -22,7 +22,7 @@ exports.createWindow = () =>
         }));
 
     // Open the DevTools.
-    this.win.webContents.openDevTools();
+    // this.win.webContents.openDevTools();
 
     // Emitted when the window is closed.
     this.win.on('closed', function () {
