@@ -11,7 +11,7 @@ exports.createWindow = () =>
     'use strict';
 
     // Create the browser window.
-    this.win = new BrowserWindow({ width: 450, height: 600 });
+    this.win = new BrowserWindow({ width: 450, height: 600, child: exports.modal });
 
     // and load the index.html of the app.
     this.win.loadURL(url.format(

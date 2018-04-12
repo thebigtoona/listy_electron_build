@@ -18,5 +18,5 @@ with a detail field and some options.
 
 ### To-Do
 
-- remove the webkit select options on li>p in styles css
-- on-click create modal window (ipcMain/ipcRenderer)
+- test electron-modal versus 'vanilla' modal creation
+- [electron-modal Documentation](https://www.npmjs.com/package/electron-modal)
