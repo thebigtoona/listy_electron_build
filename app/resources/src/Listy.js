@@ -37,7 +37,9 @@ module.exports = Listy =
         let listClass = listitem.trim().split(' ').join('-');
         // html template for list item
         let html = `<li class="list-group-item alert">
-                        <p class="item-name ${listClass}" >${listitem}</p>
+                        <a class="details">
+                          <p class="item-name ${listClass}" >${listitem}</p>
+                        </a>
                         <button style="font-family: sans-serif;" type="button" class="close" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

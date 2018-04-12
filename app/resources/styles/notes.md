@@ -15,3 +15,8 @@ try building from renderer proc instead with remote module.
 ## Popup Branch
 build modal window for list items
 with a detail field and some options.
+
+### To-Do
+
+- remove the webkit select options on li>p in styles css
+- on-click create modal window (ipcMain/ipcRenderer)
