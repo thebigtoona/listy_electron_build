@@ -6,7 +6,7 @@ const url = require('url')
 
 exports.win;
 
-exports.createWindow = () =>
+exports.createWindow = () =>  // needs to be an arrow fn for 'this'
 {
     'use strict';
 
