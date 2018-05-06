@@ -7,7 +7,7 @@
     --overlay-color:  rgba(255, 255, 255, .5);
 
     /* imgs */
-    --flower-bg-stack: url('../images/sunflower.jpg') fixed no-repeat;
+    --flower-bg-stack: url('../images/notepad-800_compressed.jpg') fixed no-repeat;
 
     /*  z indices for different levels of visibilty */
     --z-bg: -1;
