@@ -9,10 +9,10 @@ self.addEventListener('install', function(e) {
     // initial cache items
     var urls = 
     [
-        '/listy/listy/app/',
-        '/listy/listy/app/sunflower.jpg',
-        '/listy/listy/app/styles.css',
-        '/listy/listy/app/app.js'
+        '/app/',
+        '/app/resources/images/sunflower.jpg',
+        '/app/resources/styles/styles.css',
+        '/app/resources/src/app.js'
     ];
     // pass in a promise 
     e.waitUntil(

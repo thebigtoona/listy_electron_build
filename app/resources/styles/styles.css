@@ -1,96 +1,111 @@
 :root
 {
-    --primary-font-stack: 'Satisfy', cursive;
+    /*  font-stacks and color presets */
+    --primary-font-stack:  16px 'Satisfy', cursive;
     --secondary-font-stack: 'Neucha', cursive;
-    --flower-img: url('../images/sunflower.jpg');
     --darker-purple: rgb(87, 28, 87);
+    --overlay-color:  rgba(255, 255, 255, .5);
+
+    /* imgs */
+    --flower-bg-stack: url('../images/sunflower.jpg') fixed no-repeat;
+
+    /*  z indices for different levels of visibilty */
+    --z-bg: -1;
+    --z-level-0: 0;
+    --z-level-1: 10;
+    --z-level-2: 100;
 }
 
-* 
+/*  RESET */
+
+*
 {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
+/*  body styles */
 
 body, html
 {
-    background: var(--flower-img);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
 
+    background: var(--flower-bg-stack);
+    background-size: cover;
 
-    font-size: 18px;
-    font-weight: 400;
-    font-family: var(--primary-font-stack);
-    line-height: 1.5em;
+    font: var(--primary-font-stack);
 }
 
-.container {
-    z-index: 1000;
+.container
+{
+    z-index: var(--z-level-1);
 }
 
+/*  overlay */
 
-.overlay {
+.overlay
+{
+    background-color: var(--overlay-color);
+    z-index: var(--z-level-0);
+
     position: absolute;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-    z-index: 0;
-    background-color: rgba(255, 255, 255, .5);
 }
 
-h1, h2, h3 
+/*  headings/paragraphs */
+
+h1, h2, h3
 {
     font-family: var(--primary-font-stack);
-    color: purple;
-    margin-bottom: 1em;
-    margin-top: 1em;
     font-size: 3em;
-    z-index: 100;
+    color: purple;
+
     position: relative;
+    margin: 1em 0em;
+    z-index: var(--z-level-1);
 }
 
 p
 {
-    font-size: 1.5em;
-    margin-top: 1em;
+    font-size: 1em;
+    margin: 0;
 }
+
+/*  add button */
 
 .btn-purple
 {
     background: purple;
     color: whitesmoke;
 }
-.btn-purple:hover 
+
+.btn-purple:hover
 {
     background: var(--darker-purple);
     color: whitesmoke;
 }
 
+/*  utility classes (close buttons) */
 .close
 {
     color: purple;
 }
+
 .close:hover
 {
     color: var(--darker-purple);
 }
 
-.top-input
+/*  form and card styles */
+.top-input, .card
 {
     position: relative;
-    z-index: 100;
-}
-
-.card
-{
-    position: relative;
-    z-index: 100;
+    z-index: var(--z-level-1);
 }
 
 .card-body
@@ -98,28 +113,38 @@ p
     padding:0;
 }
 
-.top-input {
-    width: 100%;
+.top-input
+{
     display: flex;
     overflow: hidden;
+
+    width: 100%;
 }
 
+/*  input styles and removal of BR */
 input
 {
     flex: 90%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
 }
 
-.form-row button 
+.form-control, ul, li, .list-group, .list-group-item, .alert, button
+{
+  border-radius: 0 !important;
+}
+
+.form-row button
 {
     flex: 10%;
 }
 
+/*  List item styles */
+
 .list-group-item
 {
     display:flex;
-    z-index: 200;
+    height: 2.5rem;
+    z-index: var(--z-level-1);
+    padding: .5rem;
 }
 
 .list-group-item:hover
@@ -127,12 +152,18 @@ input
     background-color: palegoldenrod;
 }
 
-.list-group-item p {
+.list-group-item a
+{
     width: 95%;
-    --webkit-user-select:none;
 }
 
-.list-group-item button {
+.list-group-item a > p
+{
+  --webkit-user-select:none;  /* so the user can't select print on the list item */
+}
+
+.list-group-item button
+{
     width:5%;
 }
 
